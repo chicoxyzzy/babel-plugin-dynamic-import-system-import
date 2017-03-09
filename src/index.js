@@ -9,7 +9,7 @@ export default () => ({
         path.replaceWith(
           t.callExpression(
             t.memberExpression(t.identifier('System'), t.identifier('import')),
-            path.node.arguments.concat(t.identifier('__moduleName')),
+            [path.node.arguments[0], t.identifier('__moduleName')],
           ),
         );
       }
